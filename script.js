@@ -53,3 +53,47 @@ if (typeof(Storage) !== "undefined") {
 
 }
 
+function validateFn() {
+    var x = document.forms["frm"]["fname"].value;
+    if (x == null || x == "" || isNaN) {
+        alert("Name must be filled out");
+        return false;
+    }
+}
+
+function validateLn() {
+    var x = document.forms["frm"]["lname"].value;
+    if (x == null || x == "" || isNaN) {
+        alert("Name must be filled out");
+        return false;
+    }
+}
+
+function validateAddress() {
+    var x = document.forms["frm"]["address"].value;
+    if (x == null || x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+}
+
+function validateMobile() {
+    var x = document.forms["frm"]["mobile"].value;
+    if (x == null || x == "" || !isNaN || x.length < 10) {
+        alert("Name must be filled out");
+        return false;
+    } else {
+		alert("done");
+	}
+}
+
+function validateEmail() {
+    var x = document.forms["frm"]["email"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address");
+        return false;
+    }
+}
+
