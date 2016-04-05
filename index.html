@@ -1,155 +1,174 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta lang="en-us">
-<meta name="keywords" content="html5, form, registration">
-<meta name="description"
-	content="This web page contains a registration form in html5">
-<meta name="author" content="Dr. Anis Koubaa">
-<title>Registration Form</title>
-<link rel="stylesheet" 
-      type="text/css" 
-      href="css/css_theme_1.css">
-	  
-	  <script src="script.js"></script>
+<title>Cookie HomeWork</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="script.js"></script>
 </head>
 <body>
-	<h1>Registration Form</h1>
-	<p class="note">Please enter your information to register to the services for
-		<a href="www.psu.edu.sa">Prince Sultan University</a> Services.</p>
-	<form action="process.php" method="post" name="frm">
-	<!-- Registration Form Table -->
-	<table id="general_information" border="1">
-		<caption>
-			<strong>Registration Form</strong>
-		</caption>
-		<thead>
-			<tr>
-				<th colspan="2">General Information</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<th>First Name</th>
-				<td><input type="text" name="fname"
-					placeholder="first name" id="fname" onblur="validateFn();"/></td>
-			</tr>
-			<tr>
-				<th>Last Name</th>
-				<td><input type="text" name="lname" placeholder="last name" id="lname" onblur="validateLn();"/></td>
-			</tr>
-			<tr>
-				<th>Gender</th>
-				<td><label>Male </label><input type="radio" name="gender"
-					value="male" id="male"/> <label>Female </label><input type="radio"
-					name="gender" value="female" id="female"/></td>
-			</tr>
-			<tr>
-				<th>Date of Birth</th>
-				<td><input type="date" name="birthdate" id="bdate"/></td>
-			</tr>
-			<tr>
-				<th>Color of eyes</th>
-				<td><input type="color" name="colorofeyes" id="color-eye"/></td>
-			</tr>
-			<tr>
-				<th>Country</th>
-				<td><select name="country" id="sa">
-						<option selected>Not selected</option>
-						<option value="Saudi Arabia" >Saudi Arabia</option>
-						<option value="Tunisia" id="tu">Tunisia</option>
-						<option value="Egypt"id="eg">Egypt</option>
-				</select></td>
-			</tr>
-			<tr>
-				<th>Country</th>
-				<td><input type="text" id="country2"
-					placeholder="Select a country" list="countries" /> <datalist
-						id="countries">
-						<option value="Saudi Arabia">Saudi Arabia</option>
-						<option value="Tunisia">Tunisia</option>
-						<option value="Egypt">Egypt</option>
-					</datalist></td>
-			</tr>
-		</tbody>
-	</table>
-	<br>
-	<br>
-	<table id="face" border="1">
-		<thead>
-			<tr>
-				<th colspan="2">Your face</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<th>Your image</th>
-				<td><input type="file" name="face_image" id="yourimage"/></td>
-			</tr>
-		</tbody>
-	</table>
-	
-	<br>
-	<br>
-	<table id="size" border="1">
-		<thead>
-			<tr>
-				<th colspan="2">Your size</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<th>Height</th>
-				<td><label>140
-				<input type="range" 
-				min = "140"
-				max="220"
-				step="1"
-				name="height"
-				id="height"/>220
-			</label></td>
-			</tr>
-			<tr>
-				<th>Weight</th>
-				<td><label>40 <input type="number" 
-				min = "40"
-				max="140"
-				step="1"
-				name="weight"
-				id="weight"/> 140
-			</label></td>
-			</tr>
-		</tbody>
-	</table>
-	
-	<br>
-	<br>
-	<table id="size" border="1">
-		<thead>
-			<tr>
-				<th colspan="2">Contact Information</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<th>Email</th>
-				<td>
-				<input type="email"	name="email" placeholder="name@domaim.com"	id="email" onblur="validateEmail();"/></td>
-			</tr>
-			<tr>
-				<th>Mobile</th>
-				<td><input type="tel"	name="mobile" placeholder="(xxx) x xx xxxxx"	id="mobile" onblur="validateMobile();"/></td>
-			</tr>
-			
-			<tr>
-				<th>Address</th>
-				<td><input type="text" name="address" placeholder="your address"	id="address" onblur="validateAddress();"/></td>
-			</tr>
-		</tbody>
-	</table>
-	<p><input class="button" type="submit" value="Register" onclick="myFunction()"></p>
-</form>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4"></div>
+
+			<div class="col-md-5" id="reg-form">
+				<h1>Registration Form</h1>
+				<p class="note">
+					Please enter your information to register to the services for <a
+						href="www.psu.edu.sa">Prince Sultan University</a> Services.
+				</p>
+
+
+				<form action="process.php" method="post" name="frm"
+					onsubmit="return myFunction()">
+					<!-- Registration Form Table -->
+					<table id="general_information" class="table table-striped">
+						<caption>
+							<strong>Registration Form</strong>
+						</caption>
+						<thead>
+							<tr>
+								<th colspan="2">General Information</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>First Name</th>
+								<td><input type="text" name="fname"
+									placeholder="first name" id="fname" class="form-control"
+									 /></td>
+							</tr>
+							<tr>
+								<th>Last Name</th>
+								<td><input type="text" name="lname" placeholder="Last name"
+									id="lname" class="form-control" /></td>
+							</tr>
+							<tr>
+								<th>Gender</th>
+								<td><label>Male </label><input type="radio" name="gender"
+									value="male" id="male" /> <label>Female </label><input
+									type="radio" name="gender" value="female" id="female" /></td>
+							</tr>
+							<tr>
+								<th>Date of Birth</th>
+								<td><input type="date" id="bdate" value="2000-05-05"
+									class="form-control"></td>
+							</tr>
+							<tr>
+								<th>Color of eyes</th>
+								<td><input type="color" name="colorofeyes" id="color-eye"
+									class="form-control" /></td>
+							</tr>
+							<tr>
+								<th>Country</th>
+								<td><select name="country" id="country">
+										<option selected>Not selected</option>
+										<option value="Saudi Arabia">Saudi Arabia</option>
+										<option value="Tunisia">Tunisia</option>
+										<option value="Egypt">Egypt</option>
+								</select></td>
+							</tr>
+							<tr>
+								<th>Country</th>
+								<td><input type="text" id="country2"
+									placeholder="Select a country" list="countries"
+									class="form-control" /> <datalist id="countries">
+										<option value="Saudi Arabia">Saudi Arabia</option>
+										<option value="Tunisia">Tunisia</option>
+										<option value="Egypt">Egypt</option>
+									</datalist></td>
+							</tr>
+						</tbody>
+					</table>
+					<br>
+
+
+					<table id="face" class="table table-striped">
+						<thead>
+							<tr>
+								<th colspan="2">Your face</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>Your image</th>
+								<td><input type="file" name="face_image" id="yourimage" /></td>
+							</tr>
+						</tbody>
+					</table>
+
+					<br> <br>
+					<table id="size" class="table table-striped">
+						<thead>
+							<tr>
+								<th colspan="2">Your size</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>Height</th>
+								<td><label>140 <input type="range" min="140"
+										max="220" step="1" name="height" id="height" />220
+								</label></td>
+							</tr>
+							<tr>
+								<th>Weight</th>
+								<td><label>40 <input type="number" min="40"
+										max="140" step="1" name="weight" id="weight" /> 140
+								</label></td>
+							</tr>
+						</tbody>
+					</table>
+
+					<br> <br>
+					<table id="size" class="table table-striped">
+						<thead>
+							<tr>
+								<th colspan="2">Contact Information</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>Email</th>
+								<td><input type="email" name="email"
+									placeholder="name@domaim.com" id="email" class="form-control" /></td>
+							</tr>
+							<tr>
+								<th>Mobile</th>
+								<td><input type="tel" name="mobile"
+									placeholder="(xxx) x xx xxxxx" id="mobile" class="form-control" /></td>
+							</tr>
+
+							<tr>
+								<th>Address</th>
+								<td><input type="text" name="address"
+									placeholder="your address" id="address" class="form-control" /></td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+
+						<button type="submit" value="Register"
+							class="btn btn-primary pull-right" onclick="myFunction();">Register</button>
+					</p>
+				</form>
+			</div>
+
+
+			<div class="col-md-3"></div>
+
+
+		</div>
+
+	</div>
 
 </body>
 </html>
